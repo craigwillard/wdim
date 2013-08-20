@@ -1,0 +1,7 @@
+rails g scaffold banner title:string old_id:integer (paperclip)
+
+rails g scaffold user username:string password_digest:string user_type:string first_name:string last_name:string email:string aim:string member_since_date:datetime posts:integer signature:text title:string location:string at_work:boolean active:boolean old_id:integer
+
+rails g scaffold avatar name:string active:boolean user:references (paperclip)
+
+rails g scaffold message title:string body:text date:datetime user:references last_post_date:datetime last_post_id:integer parent_id:integer old_id:integer (ancestry)
