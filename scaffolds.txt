@@ -1,7 +1,13 @@
-rails g scaffold banner title:string old_id:integer (paperclip)
+rails g scaffold banner title:string old_id:integer
 
-rails g scaffold user username:string password_digest:string user_type:string first_name:string last_name:string email:string aim:string member_since_date:datetime posts:integer signature:text title:string location:string at_work:boolean active:boolean old_id:integer
+rails g paperclip banner image
 
-rails g scaffold avatar name:string active:boolean user:references (paperclip)
+rails g scaffold user username:string password_digest:string user_type:string first_name:string last_name:string email:string aim:string member_since_date:datetime posts:integer signature:text title:string location:string at_work:boolean active:boolean messages:references avatars:messages old_id:integer
 
-rails g scaffold message title:string body:text date:datetime user:references last_post_date:datetime last_post_id:integer parent_id:integer old_id:integer (ancestry)
+rails g scaffold avatar name:string active:boolean user_id:integer
+
+rails g paperclip avatar image
+
+rails g scaffold message title:string body:text date:datetime user_id:integer last_post_date:datetime last_post_id:integer old_id:integer
+
+rails g migration add_ancestry_to_message ancestry:string
