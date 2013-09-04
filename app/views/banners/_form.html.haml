@@ -1,0 +1,16 @@
+= form_for @banner do |f|
+  - if @banner.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@banner.errors.count, "error")} prohibited this banner from being saved:"
+      %ul
+        - @banner.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :old_id
+    = f.number_field :old_id
+  .actions
+    = f.submit 'Save'

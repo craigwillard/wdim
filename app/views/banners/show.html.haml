@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @banner.title
+%p
+  %b Old:
+  = @banner.old_id
+
+= link_to 'Edit', edit_banner_path(@banner)
+\|
+= link_to 'Back', banners_path

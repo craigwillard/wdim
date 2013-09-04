@@ -1,4 +1,7 @@
 Wdim::Application.routes.draw do
+  resources :banners
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
