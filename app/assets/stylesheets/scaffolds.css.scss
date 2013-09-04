@@ -4,6 +4,7 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  padding: 10px;
 }
 
 p, ol, ul, td {
@@ -43,6 +44,15 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+table {
+  border-left: solid 1px #000;
+  border-top: solid 1px #000;
+  td, th {
+    border-bottom: solid 1px #000;
+    border-right: solid 1px #000;
+  }
 }
 
 #error_explanation {
