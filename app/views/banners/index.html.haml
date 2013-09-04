@@ -3,7 +3,7 @@
 %table
   %tr
     %th Title
-    %th Old
+    / %th Old
     %th
     %th
     %th
@@ -11,7 +11,7 @@
   - @banners.each do |banner|
     %tr
       %td= banner.title
-      %td= banner.old_id
+      / %td= banner.old_id
       %td= link_to 'Show', banner
       %td= link_to 'Edit', edit_banner_path(banner)
       %td= link_to 'Destroy', banner, :method => :delete, :data => { :confirm => 'Are you sure?' }

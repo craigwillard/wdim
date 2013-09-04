@@ -4,8 +4,11 @@
   %b Title:
   = @banner.title
 %p
-  %b Old:
-  = @banner.old_id
+  %b Image:
+  = link_to image_tag(@banner.image.url(:thumb)), @banner.image.url
+/ %p
+/   %b Old:
+/   = @banner.old_id
 
 = link_to 'Edit', edit_banner_path(@banner)
 \|

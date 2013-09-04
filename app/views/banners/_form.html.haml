@@ -1,4 +1,4 @@
-= form_for @banner do |f|
+= form_for @banner, html: { :multipart => true } do |f|
   - if @banner.errors.any?
     #error_explanation
       %h2= "#{pluralize(@banner.errors.count, "error")} prohibited this banner from being saved:"
@@ -8,9 +8,12 @@
 
   .field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, autofocus: true
   .field
-    = f.label :old_id
-    = f.number_field :old_id
+    = f.label :image
+    = f.file_field :image
+  / .field
+  /   = f.label :old_id
+  /   = f.number_field :old_id
   .actions
     = f.submit 'Save'

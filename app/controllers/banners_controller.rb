@@ -87,6 +87,6 @@ class BannersController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def banner_params
-      params.require(:banner).permit(:old_id, :title)
+      params.require(:banner).permit(:old_id, :title, :image)
     end
 end
