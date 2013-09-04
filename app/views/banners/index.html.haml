@@ -3,18 +3,17 @@
 %table
   %tr
     %th Title
-    / %th Old
-    %th
-    %th
-    %th
+    %th Thumbnail
+    %th Options
 
   - @banners.each do |banner|
     %tr
       %td= banner.title
-      / %td= banner.old_id
-      %td= link_to 'Show', banner
-      %td= link_to 'Edit', edit_banner_path(banner)
-      %td= link_to 'Destroy', banner, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= image_tag(banner.image.url(:thumb))
+      %td
+        = link_to 'Show', banner
+        = link_to 'Edit', edit_banner_path(banner)
+        = link_to 'Destroy', banner, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
