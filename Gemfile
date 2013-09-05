@@ -10,6 +10,7 @@ gem 'nokogiri'
 gem 'paperclip'
 gem 'ancestry'
 gem 'strong_parameters', :github => "rails/strong_parameters", :branch => "master"
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
