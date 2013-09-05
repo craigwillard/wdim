@@ -1,4 +1,7 @@
 Wdim::Application.routes.draw do
+  resources :avatars
+
+
   resources :users
   resources :banners
   resources :sessions

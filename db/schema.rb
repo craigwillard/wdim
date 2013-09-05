@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130905020715) do
+ActiveRecord::Schema.define(:version => 20130905163028) do
+
+  create_table "avatars", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.text     "signature"
+    t.string   "title"
+    t.string   "location"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "banners", :force => true do |t|
     t.string   "title"
