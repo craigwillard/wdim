@@ -15,9 +15,9 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-  .field
-    = f.label :user_type
-    = f.text_field :user_type
+  / .field
+  /   = f.label :user_type
+  /   = f.text_field :user_type
   .field
     = f.label :first_name
     = f.text_field :first_name
@@ -27,29 +27,29 @@
   .field
     = f.label :email
     = f.text_field :email
-  .field
-    = f.label :aim
-    = f.text_field :aim
-  .field
-    = f.label :member_since
-    = f.date_select :member_since
-  .field
-    = f.label :posts_count
-    = f.number_field :posts_count
-  .field
-    = f.label :at_work
-    = f.check_box :at_work
-  .field
-    = f.label :active
-    = f.check_box :active
+  / .field
+  /   = f.label :aim
+  /   = f.text_field :aim
+  / .field
+  /   = f.label :member_since
+  /   = f.date_select :member_since
+  / .field
+  /   = f.label :posts_count
+  /   = f.number_field :posts_count
+  / .field
+  /   = f.label :at_work
+  /   = f.check_box :at_work
+  / .field
+  /   = f.label :active
+  /   = f.check_box :active
   / .field
   /   = f.label :messages
   /   = f.text_field :messages
   / .field
   /   = f.label :avatars
   /   = f.text_field :avatars
-  .field
-    = f.label :old_id
-    = f.number_field :old_id
+  / .field
+  /   = f.label :old_id
+  /   = f.number_field :old_id
   .actions
     = f.submit 'Save'
