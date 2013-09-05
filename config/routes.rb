@@ -3,5 +3,6 @@ Wdim::Application.routes.draw do
   resources :banners
   resources :sessions
 
-  get "login"   => "sessions#new",     as: "log_in"
+  get       "login"   => "sessions#new", as: "log_in"
+  root      to: "sessions#new"
 end
