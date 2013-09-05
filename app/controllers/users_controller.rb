@@ -87,6 +87,6 @@ class UsersController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def user_params
-      params.require(:user).permit(:active, :aim, :at_work, :avatars, :email, :first_name, :last_name, :member_since, :messages, :old_id, :password_digest, :posts_count, :user_type, :username)
+      params.require(:user).permit(:active, :aim, :at_work, :avatars, :email, :first_name, :last_name, :member_since, :messages, :old_id, :password_digest, :posts_count, :user_type, :username, :password, :password_confirmation)
     end
 end
