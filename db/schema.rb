@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904194659) do
+ActiveRecord::Schema.define(:version => 20130905020715) do
 
   create_table "banners", :force => true do |t|
     t.string   "title"
@@ -23,5 +23,27 @@ ActiveRecord::Schema.define(:version => 20130904194659) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "user_type"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "aim"
+    t.date     "member_since"
+    t.integer  "posts_count"
+    t.boolean  "at_work"
+    t.boolean  "active"
+    t.integer  "messages_id"
+    t.integer  "avatars_id"
+    t.integer  "old_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "users", ["avatars_id"], :name => "index_users_on_avatars_id"
+  add_index "users", ["messages_id"], :name => "index_users_on_messages_id"
 
 end

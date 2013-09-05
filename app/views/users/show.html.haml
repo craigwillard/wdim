@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Username:
+  = @user.username
+%p
+  %b Password digest:
+  = @user.password_digest
+%p
+  %b User type:
+  = @user.user_type
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Aim:
+  = @user.aim
+%p
+  %b Member since:
+  = @user.member_since
+%p
+  %b Posts count:
+  = @user.posts_count
+%p
+  %b At work:
+  = @user.at_work
+%p
+  %b Active:
+  = @user.active
+%p
+  %b Messages:
+  = @user.messages
+%p
+  %b Avatars:
+  = @user.avatars
+%p
+  %b Old:
+  = @user.old_id
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

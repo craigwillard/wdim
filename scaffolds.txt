@@ -2,9 +2,9 @@ rails g scaffold banner title:string old_id:integer
 
 rails g paperclip banner image
 
-rails g scaffold user username:string password_digest:string user_type:string first_name:string last_name:string email:string aim:string member_since_date:datetime posts:integer signature:text title:string location:string at_work:boolean active:boolean messages:references avatars:messages old_id:integer
+rails g scaffold user username:string password_digest:string user_type:string first_name:string last_name:string email:string aim:string member_since:date posts_count:integer at_work:boolean active:boolean messages:references avatars:references old_id:integer
 
-rails g scaffold avatar name:string active:boolean user_id:integer
+rails g scaffold avatar name:string active:boolean signature:text title:string location:string user_id:integer
 
 rails g paperclip avatar image
 

@@ -1,0 +1,52 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :username
+    = f.text_field :username
+  .field
+    = f.label :password_digest
+    = f.text_field :password_digest
+  .field
+    = f.label :user_type
+    = f.text_field :user_type
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :aim
+    = f.text_field :aim
+  .field
+    = f.label :member_since
+    = f.date_select :member_since
+  .field
+    = f.label :posts_count
+    = f.number_field :posts_count
+  .field
+    = f.label :at_work
+    = f.check_box :at_work
+  .field
+    = f.label :active
+    = f.check_box :active
+  .field
+    = f.label :messages
+    = f.text_field :messages
+  .field
+    = f.label :avatars
+    = f.text_field :avatars
+  .field
+    = f.label :old_id
+    = f.number_field :old_id
+  .actions
+    = f.submit 'Save'
