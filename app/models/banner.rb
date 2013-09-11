@@ -1,4 +1,12 @@
 class Banner < ActiveRecord::Base
-  attr_accessible :old_id, :title, :image
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image
+
+  validates         :title,
+                      presence: true,
+                      length: { minimum: 2 }
+
+  validates_attachment  :image,
+                          presence: true
+
+  attr_accessible   :old_id, :title, :image
 end
