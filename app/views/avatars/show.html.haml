@@ -1,14 +1,10 @@
+%h1 Avatar Details
+
 %p#notice= notice
 
 %p
   %b Name:
   = @avatar.name
-%p
-  %b Active:
-  = @avatar.active
-%p
-  %b Signature:
-  = @avatar.signature
 %p
   %b Title:
   = @avatar.title
@@ -16,9 +12,15 @@
   %b Location:
   = @avatar.location
 %p
-  %b User:
-  = @avatar.user_id
+  %b Signature:
+  = @avatar.signature
+%p
+  %b Active:
+  = @avatar.active
+%p
+  %b Image:
+  = link_to (image_tag @avatar.image.url(:default)), @avatar.image.url, target: "_blank"
 
-= link_to 'Edit', edit_user_avatar_path(@user, @avatar)
+= link_to 'Edit', edit_avatar_path(@avatar)
 \|
 = link_to 'Back', user_avatars_path(@user)

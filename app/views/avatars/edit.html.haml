@@ -1,7 +1,7 @@
-%h1 Editing avatar
+%h1 Editing Avatar
 
 = render 'form'
 
-= link_to 'Show', user_avatar_path(@user, @avatar)
+= link_to 'Show', avatar_path(@avatar)
 \|
 = link_to 'Back', user_avatars_path(@user)
