@@ -1,0 +1,30 @@
+%h1
+  Listing Avatars for
+  = link_to @user.username, @user
+
+%table
+  %tr
+    %th Name
+    %th Title
+    %th Location
+    %th Signature
+    %th Active
+    %th Thumbnail
+    %th Options
+
+  - @avatars.each do |avatar|
+    %tr
+      %td= avatar.name
+      %td= avatar.title
+      %td= avatar.location
+      %td= avatar.signature
+      %td= avatar.active
+      %td= image_tag avatar.image.url(:default)
+      %td
+        = link_to 'Show', avatar
+        = link_to 'Edit', edit_avatar_path(avatar)
+        = link_to 'Destroy', avatar, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Avatar', new_user_avatar_path(@user)

@@ -1,0 +1,7 @@
+%h1 Editing avatar
+
+= render 'form'
+
+= link_to 'Show', user_avatar_path(@user, @avatar)
+\|
+= link_to 'Back', user_avatars_path(@user)

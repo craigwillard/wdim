@@ -1,8 +1,11 @@
 Wdim::Application.routes.draw do
-  resources :avatars
 
+  resources :users do
+    resources :avatars, only: [:index, :new, :create, :update]
+  end
 
-  resources :users
+  resources :avatars, only: [:show, :edit, :destroy]
+
   resources :banners
   resources :sessions
 

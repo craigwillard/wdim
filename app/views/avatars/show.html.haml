@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @avatar.name
+%p
+  %b Active:
+  = @avatar.active
+%p
+  %b Signature:
+  = @avatar.signature
+%p
+  %b Title:
+  = @avatar.title
+%p
+  %b Location:
+  = @avatar.location
+%p
+  %b User:
+  = @avatar.user_id
+
+= link_to 'Edit', edit_user_avatar_path(@user, @avatar)
+\|
+= link_to 'Back', user_avatars_path(@user)
