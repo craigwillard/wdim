@@ -3,11 +3,13 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_many            :avatars
+  has_many            :avatars,
+                        dependent: :destroy
   # has_many            :messages
 
   validates           :username,
                         presence: true,
+                        uniqueness: { case_sensitive: false },
                         length: { minimum: 2, maximum: 45 }
 
   validates           :password,
@@ -25,7 +27,7 @@ class User < ActiveRecord::Base
 
   validates           :email,
                         presence: true,
-                        format: {with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+                        format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
 
   validates           :user_type,
                         presence: true,
@@ -33,12 +35,16 @@ class User < ActiveRecord::Base
 
   attr_accessible     :active, :aim, :at_work, :email, :first_name, :last_name, :member_since, :old_id, :password_digest, :posts_count, :user_type, :username, :password, :password_confirmation
 
-  before_validation   :set_user_type,
+  before_validation   :set_defaults,
                         on: :create
 
-  def set_user_type
+  def set_defaults
     if self.user_type.nil?
       self.user_type = "default"
+    end
+
+    if self.member_since.nil?
+      self.member_since = Date.current
     end
   end
 end

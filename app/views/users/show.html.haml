@@ -31,18 +31,18 @@
 %p
   %b At work:
   = @user.at_work
-%p
-  %b Active:
-  = @user.active
+/ %p
+/   %b Active:
+/   = @user.active
 / %p
 /   %b Messages:
 /   = @user.messages
 / %p
 /   %b Avatars:
 /   = @user.avatars
-%p
-  %b Old:
-  = @user.old_id
+/ %p
+/   %b Old:
+/   = @user.old_id
 
 = link_to 'Edit', edit_user_path(@user)
 \|
