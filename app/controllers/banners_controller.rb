@@ -1,6 +1,5 @@
 class BannersController < ApplicationController
-  # GET /banners
-  # GET /banners.json
+
   def index
     @banners = Banner.all
 
@@ -10,8 +9,6 @@ class BannersController < ApplicationController
     end
   end
 
-  # GET /banners/1
-  # GET /banners/1.json
   def show
     @banner = Banner.find(params[:id])
 
@@ -21,8 +18,6 @@ class BannersController < ApplicationController
     end
   end
 
-  # GET /banners/new
-  # GET /banners/new.json
   def new
     @banner = Banner.new
 
@@ -32,13 +27,10 @@ class BannersController < ApplicationController
     end
   end
 
-  # GET /banners/1/edit
   def edit
     @banner = Banner.find(params[:id])
   end
 
-  # POST /banners
-  # POST /banners.json
   def create
     @banner = Banner.new(banner_params)
 
@@ -53,8 +45,6 @@ class BannersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /banners/1
-  # PATCH/PUT /banners/1.json
   def update
     @banner = Banner.find(params[:id])
 
@@ -69,8 +59,6 @@ class BannersController < ApplicationController
     end
   end
 
-  # DELETE /banners/1
-  # DELETE /banners/1.json
   def destroy
     @banner = Banner.find(params[:id])
     @banner.destroy
@@ -83,9 +71,6 @@ class BannersController < ApplicationController
 
   private
 
-    # Use this method to whitelist the permissible parameters. Example:
-    # params.require(:person).permit(:name, :age)
-    # Also, you can specialize this method with per-user checking of permissible attributes.
     def banner_params
       params.require(:banner).permit(:old_id, :title, :image)
     end

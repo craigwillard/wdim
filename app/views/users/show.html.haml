@@ -1,11 +1,12 @@
+%h1 User Details
 %p#notice= notice
 
 %p
   %b Username:
   = @user.username
-%p
-  %b Password digest:
-  = @user.password_digest
+/ %p
+/   %b Password digest:
+/   = @user.password_digest
 %p
   %b User type:
   = @user.user_type
@@ -33,12 +34,12 @@
 %p
   %b Active:
   = @user.active
-%p
-  %b Messages:
-  = @user.messages
-%p
-  %b Avatars:
-  = @user.avatars
+/ %p
+/   %b Messages:
+/   = @user.messages
+/ %p
+/   %b Avatars:
+/   = @user.avatars
 %p
   %b Old:
   = @user.old_id

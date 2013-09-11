@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
+
   def index
     @users = User.all
 
@@ -10,8 +9,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     @user = User.find(params[:id])
 
@@ -21,8 +18,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
   def new
     @user = User.new
 
@@ -32,13 +27,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -53,8 +45,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
 
@@ -69,8 +59,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -83,9 +71,6 @@ class UsersController < ApplicationController
 
   private
 
-    # Use this method to whitelist the permissible parameters. Example:
-    # params.require(:person).permit(:name, :age)
-    # Also, you can specialize this method with per-user checking of permissible attributes.
     def user_params
       params.require(:user).permit(:active, :aim, :at_work, :avatars, :email, :first_name, :last_name, :member_since, :messages, :old_id, :password_digest, :posts_count, :user_type, :username, :password, :password_confirmation)
     end
