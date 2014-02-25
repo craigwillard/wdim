@@ -1,6 +1,11 @@
 class Avatar < ActiveRecord::Base
   has_attached_file     :image,
-                          styles: { :default => "150x150>" }
+                          path: ':rails_root/public/stage/:user/:basename_:style.:extension',
+                          url: '/stage/:user/:basename_:style.:extension',
+                          whiny: false,
+                          styles: {
+                            :thumb => "150x150>"
+                          }
 
   belongs_to            :user
 
@@ -12,7 +17,7 @@ class Avatar < ActiveRecord::Base
 
   validates_attachment  :image,
                           presence: true,
-                          content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] },
+                          content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'image/png'] },
                           size: { in: 0..1.megabytes }
 
   attr_accessible       :active, :location, :name, :signature, :title, :user_id, :image

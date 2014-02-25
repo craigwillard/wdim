@@ -19,7 +19,7 @@
       %td= avatar.location
       %td= avatar.signature
       %td= avatar.active
-      %td= image_tag avatar.image.url(:default)
+      %td= image_tag avatar.image.url(:thumb)
       %td
         = link_to 'Show', avatar
         = link_to 'Edit', edit_avatar_path(avatar)
