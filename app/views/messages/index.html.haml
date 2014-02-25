@@ -1,0 +1,23 @@
+%h1 Listing messages
+
+%table
+  %tr
+    %th Title
+    %th User
+    %th Reply count
+    %th Last post date
+    %th
+
+  - @messages.each do |message|
+    %tr
+      %td= link_to message.title, message
+      %td= link_to message.user.username, user_path(message.user)
+      %td= message.reply_count
+      %td= message.date
+      %td
+        = link_to 'Edit', edit_message_path(message)
+        = link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Message', new_user_message_path(current_user)

@@ -8,6 +8,6 @@ rails g scaffold avatar name:string active:boolean signature:text title:string l
 
 rails g paperclip avatar image
 
-rails g scaffold message title:string body:text date:datetime user_id:integer last_post_date:datetime last_post_id:integer old_id:integer
+rails g scaffold message title:string body:text date:datetime user_id:integer last_post_date:datetime last_post_id:integer reply_count:integer old_id:integer
 
 rails g migration add_ancestry_to_message ancestry:string

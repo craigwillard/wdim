@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many            :avatars,
                         dependent: :destroy
-  # has_many            :messages
+  has_many            :messages
 
   validates           :username,
                         presence: true,

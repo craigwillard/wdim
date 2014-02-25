@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @message.title
+%p
+  %b Body:
+  = @message.body
+%p
+  %b Date:
+  = @message.date
+%p
+  %b User:
+  = @message.user_id
+%p
+  %b Last post date:
+  = @message.last_post_date
+%p
+  %b Last post:
+  = @message.last_post_id
+%p
+  %b Reply count:
+  = @message.reply_count
+
+= link_to 'Edit', edit_message_path(@message)
+\|
+= link_to 'Back', messages_path
