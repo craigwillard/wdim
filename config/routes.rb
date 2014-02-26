@@ -12,5 +12,6 @@ Wdim::Application.routes.draw do
   resources :sessions
 
   get       "login"   => "sessions#new", as: "log_in"
+  get       "logout"   => "sessions#destroy", as: "log_out"
   root      to: "sessions#new"
 end
