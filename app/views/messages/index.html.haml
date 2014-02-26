@@ -9,14 +9,15 @@
     %th
 
   - @messages.each do |message|
-    %tr
-      %td= link_to message.title, message
-      %td= link_to message.user.username, user_path(message.user)
-      %td= message.reply_count
-      %td= message.date
-      %td
-        = link_to 'Edit', edit_message_path(message)
-        = link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    - present message do |message_presenter|
+      %tr
+        %td= link_to message.title, message
+        %td= link_to message.user.username, user_path(message.user)
+        %td= message.reply_count
+        %td= message.date
+        %td
+          = message_presenter.edit_link
+          = message_presenter.destroy_link
 
 %br
 

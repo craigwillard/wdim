@@ -4,11 +4,12 @@ class Message < ActiveRecord::Base
 
   belongs_to            :user
 
-  validates             :user_id,
+  validates             :user_id, :body,
                           presence: true
 
   validates             :title,
-                          presence: true
+                          presence: true,
+                          if: "self.is_root? == true"
 
   before_save           :update_caches
 

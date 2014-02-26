@@ -47,4 +47,8 @@ class User < ActiveRecord::Base
       self.member_since = Date.current
     end
   end
+
+  def is_admin?
+    self.user_type == "admin"
+  end
 end
